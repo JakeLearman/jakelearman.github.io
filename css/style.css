@@ -1,0 +1,130 @@
+body{
+    background-image: url("../images/what-the-hex.png");
+    text-align: center;
+}
+
+#header{
+    padding-top: 1%;
+    padding-bottom: 1%;
+  	text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 45px;
+}
+
+#content{
+    padding-left: 25%;
+    padding-right: 25%;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+.button {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 20px; 
+  font-family: 'Bree Serif', serif;
+  border-radius: 10px;
+  margin: 4px 2px;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+/* visited link */
+a:visited {  
+  text-decoration: none;
+  color: white;
+
+}
+
+/* mouse over link */
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+/* selected link */
+a:active {
+  text-decoration: none;
+  color: white;
+}
+
+.container {
+  
+    width: 400px;
+    margin: 0 auto;
+    padding: 1%;
+    text-align: center;
+  }
+  
+  .icon {
+    display: inline-block;
+    background: #333;
+    width: 60px;
+    height: 60px;
+    color: white;
+    margin-left: -3px;
+    margin-right: -3px;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  .icon span {
+    padding-top: 22px;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  
+  .first {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+  
+  .last {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+  
+  .label {
+    position: relative;
+    top: -40px;
+    color: white;
+    font-weight: bold;
+    pointer-events: none;
+    transition: all 0.5s;
+  }
+  
+  .contact:hover .icon {
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .contact:hover .icon span {
+    opacity: 1;
+  }
+  .contact:hover .label {
+    opacity: 0;
+  }
+  .contact:hover .facebook {
+    background: #3b5998;
+  }
+  .contact:hover .twitter {
+    background: #55acee;
+  }
+  .contact:hover .linkedIn {
+    background: #007BB5;
+  }
+  .contact:hover .github {
+    background: #333;
+  }
+}
+
+  
