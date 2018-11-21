@@ -30,14 +30,31 @@
                     <button class="button"> <i class="fa fa-download"></i> Download CV</button>
                 </a>
         </div>
+        <div class="email">        
+        <button class="button" onclick="openForm()">Email</button>
+            <div id="emailForm">
+               <form action="php/mail.php" method="POST">
+                <p>Name</p> <input type="text" name="name">
+                <p>Email</p> <input type="text" name="email">
+                <p>Message</p><textarea name="message" rows="6" cols="25"></textarea><br />
+                <input type="submit" value="Send"><input type="reset" value="Clear">
+               </form>
+            </div>
+        </div>
         <div class="container">
                 <div class="contact">
                     <div class="icon first facebook"><a href="https://www.facebook.com/JakeLman21" target="_blank"><span class="fa fa-facebook"></a></div>
                     <div class="icon twitter"><a href="https://twitter.com/LearmanadeStand" target="_blank"><span class="fa fa-twitter"></a></span></div>
                     <div class="icon github"><a href="https://github.com/JakeLearman" target="_blank"><span class="fa fa-github" target="_blank"> </a></span></div>
                     <div class="icon last linkedIn"><a href="https://www.linkedin.com/in/jakelearman/" target="_blank"><span class="fa fa-linkedin"> </a></span></div>
-                    <div class="label"> CONTACT </div>
+                    <div class="label"> Social Links </div>
                 </div>
         </div>
     </body>
+    <script>
+        function openForm() {
+    var x = document.getElementById("emailForm");
+    x.className = "show";
+    }
+    </script>
 </html>
