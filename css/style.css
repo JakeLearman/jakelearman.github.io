@@ -1,104 +1,123 @@
-body{
+body {
     background-image: url("../images/what-the-hex.png");
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
-#header{
+#header {
     padding-top: 1%;
     padding-bottom: 1%;
-  	text-align: center;
+    text-align: center;
     font-family: 'Permanent Marker', cursive;
     font-size: 45px;
 }
 
-#content{
+#content {
     padding-left: 25%;
     padding-right: 25%;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
 .button {
-  background-color: #333;
-  border: none;
-  color: white;
-  padding: 20px;
-  cursor: pointer;
-  font-size: 20px; 
-  font-family: 'Bree Serif', serif;
-  border-radius: 10px;
-  margin: 4px 2px;
+    background-color: #333;
+    border: none;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Bree Serif', serif;
+    border-radius: 10px;
+    margin: 4px 2px;
 }
 
 a:link {
-  text-decoration: none;
-  color: white;
+    text-decoration: bold;
+    color: #333;
 }
+
 
 /* visited link */
-a:visited {  
-  text-decoration: none;
-  color: white;
 
+a:visited {
+    text-decoration: bold;
+    color: #333;
 }
+
 
 /* mouse over link */
+
 a:hover {
-  text-decoration: none;
-  color: white;
+    text-decoration: bold, underline;
+    color: #333;
 }
+
 
 /* selected link */
+
 a:active {
-  text-decoration: none;
-  color: white;
+    text-decoration: bold;
+    color: #333;
 }
 
+
 /* The snackbar - position it at the bottom and in the middle of the screen */
+
 #emailForm {
-  visibility: hidden; 
-  min-width: 250px; 
-  margin-left: -125px; 
-  background-color: #333; 
-  color: #fff; 
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px; 
-  position: fixed; 
-  z-index: 1; 
-  left: 50%; 
-  bottom: 30px; 
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
 }
 
 #emailForm.show {
-  visibility: visible; 
- -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
- animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
 @-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
 }
 
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
 }
 
 .container {
-  
     width: 400px;
     margin: 0 auto;
     padding: 1%;
     text-align: center;
-  }
-  
-  .icon {
+}
+
+.icon {
     display: inline-block;
     background: #333;
     width: 60px;
@@ -108,55 +127,62 @@ a:active {
     margin-right: -3px;
     transition: all 0.5s;
     cursor: pointer;
-  }
-  .icon span {
+}
+
+.icon span {
     padding-top: 22px;
     opacity: 0;
     transition: all 0.5s;
-  }
-  
-  .first {
+}
+
+.first {
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
-  }
-  
-  .last {
+}
+
+.last {
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
-  }
-  
-  .label {
+}
+
+.label {
     position: relative;
     top: -40px;
     color: white;
     font-weight: bold;
     pointer-events: none;
     transition: all 0.5s;
-  }
-  
-  .contact:hover .icon {
+}
+
+.contact:hover .icon {
     border-radius: 50%;
     margin-left: 5px;
     margin-right: 5px;
-  }
-  .contact:hover .icon span {
-    opacity: 1;
-  }
-  .contact:hover .label {
-    opacity: 0;
-  }
-  .contact:hover .facebook {
-    background: #3b5998;
-  }
-  .contact:hover .twitter {
-    background: #55acee;
-  }
-  .contact:hover .linkedIn {
-    background: #007BB5;
-  }
-  .contact:hover .github {
-    background: #333;
-  }
 }
 
-  
+.contact:hover .icon span {
+    opacity: 1;
+}
+
+.contact:hover .label {
+    opacity: 0;
+}
+
+.contact:hover .facebook {
+    background: #3b5998;
+}
+
+.contact:hover .twitter {
+    background: #55acee;
+}
+
+.contact:hover .linkedIn {
+    background: #007BB5;
+}
+
+.contact:hover .github {
+    background: #333;
+}
+
+
+}
