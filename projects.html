@@ -10,6 +10,7 @@
     <title> Projects </title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/projects.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico|Permanent+Marker|Bree+Serif" rel="stylesheet">
     <!-- Google Fonts -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
@@ -29,9 +30,47 @@
         <a href="contact.html" id="contact">Contact</a>
     </div>
     <div id="content">
-        Content
+        <div class="tab">
+            <button class="tablinks" onclick="openProject(event, 'Enigma')" id="defaultOpen"> Optimising Solutions To The Engima Machine </button>
+            <button class="tablinks" onclick="openProject(event, 'Talks')"> Computer Generated Talks</button>
+            <button class="tablinks" onclick="openProject(event, 'Scales')"> Scale Maker</button>
+          </div>
+
+          <div id="Enigma" class="tabcontent">
+            <h3>Optimising Solutions To The Engima Machine </h3>
+            <p> Here's some content </p>
+          </div>
+          
+          <div id="Talks" class="tabcontent">
+            <h3>Computer Generated Talks</h3>
+            <p> Some content about talks.</p> 
+          </div>
+          
+          <div id="Scales" class="tabcontent">
+            <h3>Scale Maker</h3>
+            <p>Some content about scales.</p>
+          </div>
     </div>
    
 </body>
 
+<script>
+    function openProject(evt, projectName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(projectName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+    
 </html>
