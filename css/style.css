@@ -23,6 +23,43 @@ h2 {
     text-align: center;
 }
 
+#navbar a {
+    position: absolute;
+    left: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    margin-top: 300px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  #navbar a:hover {
+    left: 0;
+  }
+  
+  #home {
+    top: 20px;
+    background-color: #4CAF50;
+  }
+  
+  #cv {
+    top: 80px;
+    background-color: #2196F3;
+  }
+  
+  #projects {
+    top: 140px;
+    background-color: #f44336;
+  }
+  
+  #contact {
+    top: 200px;
+    background-color: #555
+  }
+
 .button {
     background-color: #333;
     border: none;
