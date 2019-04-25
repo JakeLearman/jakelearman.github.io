@@ -160,8 +160,8 @@ a:active {
     width: 60px;
     height: 60px;
     color: white;
-    margin-left: -3px;
-    margin-right: -3px;
+    margin-left: -5px;
+    margin-right: -5px;
     transition: all 0.5s;
     cursor: pointer;
 }

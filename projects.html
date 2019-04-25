@@ -1,82 +1,70 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Jake Learman">
-    <meta name="description" content="Jake Learman Website">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title> Projects </title>
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/projects.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico|Permanent+Marker|Bree+Serif" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <!-- Awesome icons -->
-
-</head>
-
-<body>
-    <header id="header">
-        <h1> Projects </h1>
-    </header>
-    
-    <div id="navbar" class="navbar">
-        <a href="index.html" id="home">Home</a>
-        <a href="cv.html" id="cv"> CV </a>
-        <a href="projects.html" id="projects">Projects</a>
-        <a href="contact.html" id="contact">Contact</a>
-    </div>
-    <div id="content">
-        <div class="tab">
-            <button class="tablinks" onclick="openProject(event, 'Enigma')" id="defaultOpen"> Optimising Solutions To The Engima Machine </button>
-            <button class="tablinks" onclick="openProject(event, 'Talks')"> Computer Generated Talks</button>
-            <button class="tablinks" onclick="openProject(event, 'Scales')"> Scale Maker</button>
-            <button class="tablinks" onclick="openProject(event, 'Website')"> jakelearman.github.io </button>
-          </div>
-
-          <div id="Enigma" class="tabcontent">
-            <h3>Optimising Solutions To The Engima Machine </h3>
-            <p> 
-                For my dissertation, I set myself the aim of cracking the Enigma machine by taking advantage of modern hardware capabilities. 
-                In order to do this, I first implemented a purely functional Enigma machine in Haskell and cracked it using the method found 
-                at Bletchley Park. At this stage I designed a brtue force solution of cracking Enigma which involved comparing every possible
-                encryption of every letter against the encrypted phrase and some suspected plain-text. 
-                <br><br>
-                <a href="https://github.com/JakeLearman/OptimisingSolutionsToTheEngimaMachine" target="_blank">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Jake Learman">
+        <meta name="description" content="Jake Learman Website">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Projects </title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/projects.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico|Permanent+Marker|Bree+Serif" rel="stylesheet">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    </head>
+    <body>
+        <header id="header">
+            <h1> Projects </h1>
+        </header>
+        <div id="navbar" class="navbar">
+            <a href="index.html" id="home">Home</a>
+            <a href="cv.html" id="cv"> CV </a>
+            <a href="projects.html" id="projects">Projects</a>
+            <a href="contact.html" id="contact">Contact</a>
+        </div>
+        <div id="content">
+            <div class="tab">
+                <button class="tablinks" onclick="openProject(event, 'Enigma')" id="defaultOpen"> Optimising Solutions To The Engima Machine </button>
+                <button class="tablinks" onclick="openProject(event, 'Talks')"> Computer Generated Talks</button>
+                <button class="tablinks" onclick="openProject(event, 'Scales')"> Scale Maker</button>
+                <button class="tablinks" onclick="openProject(event, 'Website')"> jakelearman.github.io </button>
+            </div>
+            <div id="Enigma" class="tabcontent">
+                <h3>Optimising Solutions To The Engima Machine </h3>
+                <p> 
+                    For my dissertation, I set myself the aim of cracking the Enigma machine by taking advantage of modern hardware capabilities. 
+                    In order to do this, I first implemented a purely functional Enigma machine in Haskell and cracked it using the method found 
+                    at Bletchley Park. At this stage I designed a brtue force solution of cracking Enigma which involved comparing every possible
+                    encryption of every letter against the encrypted phrase and some suspected plain-text. 
+                    <br><br>
+                    <a href="https://github.com/JakeLearman/OptimisingSolutionsToTheEngimaMachine" target="_blank">
+                        <button class="button"> <i class="fa fa-github"></i> View on Github </button>
+                    </a>
+                </p>
+            </div>
+            <div id="Talks" class="tabcontent">
+                <h3>Computer Generated Talks</h3>
+                <p> 
+                    This project was developed for a year-long group project for my second year of university. It consisted of tracking word trends from
+                    existing scientific papers and generating new papers. I was elected team leader for the project due to my organisational and time-management 
+                    skills. Overall, the project was a success and received an excellent reception at the presentation day.
+                    <br><br>
+                    <a href="https://github.com/JakeLearman/ComputerGeneratedTalks" target="_blank">
+                        <button class="button"> <i class="fa fa-github"></i> View on Github </button>
+                    </a>
+                </p>   
+            </div>
+            <div id="Scales" class="tabcontent">
+                <h3>Scale Maker</h3>
+                <p> 
+                    This is a project I am developing as part of my hobby of playing Guitar. The aim of the project is to generate a list of suitable musical scales 
+                    based upon a list of inputted notes. Currently the project simply retireves a scale based upon its name and I aim to finish it in the near future.
+                </p>
+                <br>
+                <a href="https://github.com/JakeLearman/ScaleMaker" target="_blank">
                     <button class="button"> <i class="fa fa-github"></i> View on Github </button>
                 </a>
-            </p>
-          </div>
-          
-          <div id="Talks" class="tabcontent">
-            <h3>Computer Generated Talks</h3>
-            <p> 
-                This project was developed for a year-long group project for my second year of university. It consisted of tracking word trends from
-                existing scientific papers and generating new papers. I was elected team leader for the project due to my organisational and time-management 
-                skills. Overall, the project was a success and received an excellent reception at the presentation day.
-                <br><br>
-                <a href="https://github.com/JakeLearman/ComputerGeneratedTalks" target="_blank">
-                    <button class="button"> <i class="fa fa-github"></i> View on Github </button>
-                </a>
-            </p>   
-          </div>
-          
-          <div id="Scales" class="tabcontent">
-            <h3>Scale Maker</h3>
-            <p> 
-                This is a project I am developing as part of my hobby of playing Guitar. The aim of the project is to generate a list of suitable musical scales 
-                based upon a list of inputted notes. Currently the project simply retireves a scale based upon its name and I aim to finish it in the near future.
-            </p>
-            <br>
-            <a href="https://github.com/JakeLearman/ScaleMaker" target="_blank">
-                <button class="button"> <i class="fa fa-github"></i> View on Github </button>
-            </a>
-          </div>
-
-          <div id="Website" class="tabcontent">
+            </div>
+            <div id="Website" class="tabcontent">
                 <h3> jakelearman.github.io </h3>
                 <p> 
                     Coming Soon.
@@ -85,28 +73,23 @@
                 <a href="https://github.com/JakeLearman/jakelearman.github.io" target="_blank">
                     <button class="button"> <i class="fa fa-github"></i> View on Github </button>
                 </a>
-              </div>
-    </div>
-   
-</body>
-
-<script>
-    function openProject(evt, projectName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(projectName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-    
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-    </script>
-    
+            </div>
+        </div>   
+    </body>
+    <script>
+        function openProject(evt, projectName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(projectName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }        
+        document.getElementById("defaultOpen").click();
+    </script>   
 </html>
