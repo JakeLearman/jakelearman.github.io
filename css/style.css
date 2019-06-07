@@ -60,6 +60,11 @@ h2 {
     background-color: #555
   }
 
+.subHeading{
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+}
 .button {
     background-color: #333;
     border: none;
