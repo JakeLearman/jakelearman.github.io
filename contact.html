@@ -21,24 +21,24 @@
         </div>
         <br>
          <div id="content">
-            <form id="contact">
+            <form id="contact" action="https://formspree.io/jaken_learman@hotmail.com" method="POST" />>
                First name:<br>
-               <input type="text" name="firstname">
+               <input type="text" name="firstname" required>
                <br>
                Last name:<br>
-               <input type="text" name="lastname"> 
+               <input type="text" name="lastname" required> 
                <br>
                Email:<br>
-               <input type="email" name="email"> 
+               <input type="email" name="email" required>  
                <br>
                Message Reason:<br>
-               <select name="type">
+               <select name="type" required>
                   <option value="general"> General Query </option>
                   <option value="work"> Business Query </option>
                </select>
                <br>
                Message:<br>
-               <textarea name="message" rows="10" cols="30"> </textarea>
+               <textarea name="message" rows="10" cols="30" required> </textarea>
                <br>
                <input type="submit" value="Submit">
              </form>
