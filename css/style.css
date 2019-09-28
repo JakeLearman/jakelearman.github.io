@@ -1,5 +1,6 @@
 body {
     background-image: url("../images/what-the-hex.png");
+    background-repeat: repeat;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
 }
