@@ -50,17 +50,9 @@ h2 {
     margin: 4px 2px;
 }
 
-a:link {
+a {
     text-decoration: bold;
-    color: #FFF;
-}
-
-
-/* visited link */
-
-a:visited {
-    text-decoration: bold;
-    color: #FFF;
+    color: #000;
 }
 
 
@@ -68,7 +60,6 @@ a:visited {
 
 a:hover {
     text-decoration: bold, underline;
-    color: #FFF;
 }
 
 
