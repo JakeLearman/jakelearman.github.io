@@ -166,3 +166,7 @@ a:active {
 .contact:hover .github {
     background: #333;
 }
+
+.fa{
+    color: #FFF;
+}
