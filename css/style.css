@@ -29,25 +29,9 @@ h2 {
     font-size: 35px;
     color:black;
     margin: 0;
-    padding: 0;
+    padding: 1%;
   }
   
-  
-  #home {
-    top: 20px;
-  }
-  
-  #cv {
-    top: 80px;
-  }
-  
-  #projects {
-    top: 140px;
-  }
-  
-  #contact {
-    top: 200px;
-  }
 
 .subHeading{
     text-align: center;
