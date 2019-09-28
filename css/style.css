@@ -24,40 +24,29 @@ h2 {
 }
 
 #navbar a {
-    position: absolute;
-    left: -80px;
-    transition: 0.3s;
-    padding: 15px;
-    margin-top: 300px;
-    width: 100px;
-    text-decoration: none;
-    font-size: 20px;
-    color: white;
-    border-radius: 0 5px 5px 0;
+    display: inline;
+    font-family:  'Permanent Marker', cursive;
+    font-size: 35px;
+    color:black;
+    margin: 0;
+    padding: 0;
   }
   
-  #navbar a:hover {
-    left: 0;
-  }
   
   #home {
     top: 20px;
-    background-color: #4CAF50;
   }
   
   #cv {
     top: 80px;
-    background-color: #2196F3;
   }
   
   #projects {
     top: 140px;
-    background-color: #f44336;
   }
   
   #contact {
     top: 200px;
-    background-color: #555
   }
 
 .subHeading{
@@ -104,30 +93,6 @@ a:hover {
 a:active {
     text-decoration: bold;
     color: #FFF;
-}
-
-
-/* The snackbar - position it at the bottom and in the middle of the screen */
-
-#emailForm {
-    visibility: hidden;
-    min-width: 250px;
-    margin-left: -125px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 2px;
-    padding: 16px;
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    bottom: 30px;
-}
-
-#emailForm.show {
-    visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
 @-webkit-keyframes fadein {
