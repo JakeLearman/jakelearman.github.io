@@ -1,0 +1,29 @@
+body {
+   margin: 0px;
+   overflow: hidden;
+ }
+
+.column {
+   float: left;
+ }
+ 
+ .left, .right {
+   width: 25%;
+ }
+ 
+ .middle {
+   width: 50%;
+ }
+
+
+ #col1{
+    border: 2px black solid;
+ }
+
+ #col2{
+   border: 2px blue solid;
+}
+
+#col3{
+   border: 2px red solid;
+}
