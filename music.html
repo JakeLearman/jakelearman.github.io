@@ -21,15 +21,33 @@
     <header id="header">
         <h1> Music Tools </h1>
     </header>
+    <div id="navbar" class="navbar">
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+  </div>
+  <br>
     <div class="row">
       <div class="column" style="background-color:#aaa;">
-        <h2>Column 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt ac erat et dignissim. Pellentesque justo tellus, suscipit eget sodales ac, malesuada id justo. 
-           Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus a venenatis ex. Quisque bibendum justo et mi imperdiet, in lacinia leo tristique. 
-           Mauris tristique lectus vel ligula lobortis, in posuere elit condimentum. Donec ullamcorper placerat mi, at consequat ex ornare quis. Cras a lacus facilisis, tincidunt elit in, 
-           varius velit. Phasellus sit amet interdum lorem. Curabitur sollicitudin, augue a dictum aliquam, elit diam bibendum ipsum, quis sollicitudin mauris mauris at nibh. Ut id efficitur 
-           dolor, eget semper leo. Phasellus id enim eu risus scelerisque consectetur id sed purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus ornare enim, vitae porttitor 
-           nulla vestibulum non. Aliquam sit amet maximus mauris, quis molestie diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h2> Metronome </h2>
+        <p>   
+           <button class="button"> <i class="fa fa-play-circle"></i>  Start </button>
+            <br><br>
+           <label for="noteValue"> Select Note Value :</label>
+
+            <select id="noteValue">
+               <option value="quarter"> Quarter </option>
+               <option value="whole"> Whole </option>
+               <option value="half"> Half </option>
+               <option value="eighth">Eighth</option>
+               <option value="sixteenth">Sixteenth</option>
+            </select>
+            <br> <br>
+
+            <div class="slidecontainer">
+               <input type="range" min="60" max="220" value="140" class="slider" id="myRange">
+               <p> Tempo: <span id="demo"></span></p>
+             </div>
+      </p>
       </div>
       <div class="column" style="background-color:#bbb;">
         <h2>Column 2</h2>
@@ -52,5 +70,15 @@
     </div>
    
 </body>
+
+<script>
+   var slider = document.getElementById("myRange");
+   var output = document.getElementById("demo");
+   output.innerHTML = slider.value;
+   
+   slider.oninput = function() {
+     output.innerHTML = this.value;
+   }
+   </script>
 
 </html>
