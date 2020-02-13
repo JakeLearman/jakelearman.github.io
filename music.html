@@ -30,7 +30,7 @@
       <div class="column" style="background-color:#aaa;">
         <h2> Metronome </h2>
         <p>   
-           <button class="button" id="button" value="Start"> <i class="fa fa-play-circle"></i>  Start </button>
+           <input type="button" class = "button" id="button" value="Start" />
             <br><br>
            <label for="noteValue"> Select Note Value :</label>
 
@@ -84,7 +84,7 @@
 
   button.addEventListener("click", Start);
 
-  function Start(){
+  function start(){
       console.log("Started");
       button.removeEventListener("click", Start);
       button.addEventListener("click", Stop);
