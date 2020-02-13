@@ -30,7 +30,7 @@
       <div class="column" style="background-color:#aaa;">
         <h2> Metronome </h2>
         <p>   
-           <button class="button"> <i class="fa fa-play-circle"></i>  Start </button>
+           <button class="button" id="button" value="Start"> <i class="fa fa-play-circle"></i>  Start </button>
             <br><br>
            <label for="noteValue"> Select Note Value :</label>
 
@@ -72,13 +72,33 @@
 </body>
 
 <script>
-   var slider = document.getElementById("myRange");
-   var output = document.getElementById("demo");
-   output.innerHTML = slider.value;
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value;
    
-   slider.oninput = function() {
-     output.innerHTML = this.value;
-   }
-   </script>
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
+
+  var button = document.getElementById("button");
+
+  button.addEventListener("click", Start);
+
+  function Start(){
+      console.log("Started");
+      button.removeEventListener("click", Start);
+      button.addEventListener("click", Stop);
+      button.value = "Stop";
+  }
+
+  function Stop(){
+      console.log("Stopped");
+      button.removeEventListener("click", Stop);
+      button.addEventListener("click", Start);
+      button.value = "Start";
+  }
+
+ 
+  </script>
 
 </html>
