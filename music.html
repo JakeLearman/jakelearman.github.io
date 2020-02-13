@@ -82,11 +82,11 @@
 
   var button = document.getElementById("button");
 
-  button.addEventListener("click", Start);
+  button.addEventListener("click", start);
 
   function start(){
       console.log("Started");
-      button.removeEventListener("click", Start);
+      button.removeEventListener("click", start);
       button.addEventListener("click", Stop);
       button.value = "Stop";
   }
@@ -94,7 +94,7 @@
   function Stop(){
       console.log("Stopped");
       button.removeEventListener("click", Stop);
-      button.addEventListener("click", Start);
+      button.addEventListener("click", start);
       button.value = "Start";
   }
 
