@@ -10,6 +10,7 @@
 
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <link rel="stylesheet" type="text/css" href="css/music.css">
+      <script type="text/javascript" src="js/metronome.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico|Permanent+Marker|Bree+Serif" rel="stylesheet">
       <!-- Google Fonts -->
       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
@@ -66,12 +67,12 @@
       </div>
     
   </body>
-
+  
 <script>
   var slider = document.getElementById("myRange");
   var output = document.getElementById("demo");
   output.innerHTML = slider.value;
-   
+    
   slider.oninput = function() {
     output.innerHTML = this.value;
   }
