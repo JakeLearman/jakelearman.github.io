@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Jake Learman">
+        <meta name="description" content="Jake Learman Website">
+        <title> Contact </title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/contact.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico|Permanent+Marker|Bree+Serif" rel="stylesheet">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    </head>
+    <body>
+        <header id="header">
+            <h1> Jake Learman // Contact </h1>
+        </header>
+        <br>
+         <div id="content">
+            <form id="contact" action="https://formspree.io/f/jaken_learman@hotmail.com" method="POST">
+               First name:<br>
+               <input type="text" name="firstname" required>
+               <br>
+               Last name:<br>
+               <input type="text" name="lastname" required> 
+               <br>
+               Email:<br>
+               <input type="email" name="email" required>  
+               <br>
+               Message Reason:<br>
+               <select name="type" required>
+                  <option value="general"> General Query </option>
+                  <option value="work"> Business Query </option>
+               </select>
+               <br>
+               Message:<br>
+               <textarea name="message" rows="10" cols="30" required> </textarea>
+               <br>
+               <input type="submit" value="Submit">
+             </form>
+
+             <a href="index.html" >
+                <button class="button"> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Return Home </button>
+            </a>
+         </div>
+</html>
