@@ -10,10 +10,13 @@
     <title>Jake Learman </title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/tabs.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico|Permanent+Marker|Bree+Serif" rel="stylesheet">
     <!-- Google Fonts -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <!-- Awesome icons -->
+	
+	<script type="text/javascript" src="scripts/tabs.js"></script>
 </head>
 
 <body>
@@ -23,7 +26,33 @@
     <div id="content">
        <h2 id="header" >Hello, my name is Jake. </h2>
         <br><br>
-        <i id="header"> Coming Soon .. </i><br><br><br>
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'TDS')">The Downward Spiral</button>
+            <button class="tablinks" onclick="openCity(event, '10KDays')">10,000 Days</button>
+            <button class="tablinks" onclick="openCity(event, 'Dopethrone')">Dopethrone</button>
+            <button class="tablinks" onclick="openCity(event, 'MirrorReaper')">Mirror Reaper</button>
+            <button class="tablinks" onclick="openCity(event, 'Leviathan')">Leviathan</button>
+          </div>
+        <div id="TDS" class="tabcontent">
+            <h3>The Downward Spiral</h3>
+            <p>The Downward Spiral</p>
+        </div>
+        <div id="10KDays" class="tabcontent">
+            <h3>10,000 Days</h3>
+            <p>10,000 Days</p>
+        </div>
+        <div id="Dopethrone" class="tabcontent">
+            <h3>Dopethrone</h3>
+            <p>Dopethrone</p>
+        </div>
+        <div id="MirrorReaper" class="tabcontent">
+            <h3>Mirror Reaper</h3>
+            <p>Mirror Reaper</p>
+        </div>
+        <div id="Leviathan" class="tabcontent">
+            <h3>Leviathan</h3>
+            <p>Leviathan</p>
+        </div>
     </div>
 </body>
 
