@@ -23,7 +23,7 @@
     <div id="content">
        <h2 id="header" >Hello, my name is Jake. </h2>
         <br><br>
-        <i id="header"> VFX Production Coordinator </i><br><br><br>
+        <i id="header"> Freelance Runner/Production Assistant currently looking for new opportunities in HETV and Features </i><br><br><br>
         <a href="docs/JakeLearman_ProductionAssistant_CV.pdf" download>
             <button class="button"> <i class="fa fa-download"></i> <s>  Download CV </s> </button>
         </a>
