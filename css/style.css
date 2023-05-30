@@ -16,7 +16,8 @@ body {
 #content {
     padding-left: 25%;
     padding-right: 25%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Permanent Marker', sans-serif;
+    font-size: 35px;
     text-align: center;
 }
 
@@ -170,3 +171,4 @@ a:active {
 .fa{
     color: #FFF;
 }
+
