@@ -1,0 +1,78 @@
+#content{
+    font-family: 'Bree Serif', serif;
+    font-size: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Permanent Marker', sans-serif;
+    font-size: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+
+.container{
+    background-color: aliceblue;
+    padding: 10px 40px;
+    position: relative;
+    border: 2px solid black;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: black;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+
+.left {
+    left: -25%;
+}
+  
+.right {
+    left: 25%;
+}
+ 
+  
+
+@media screen and (max-width: 600px) {
+    .timeline::after {
+        left: 31px;
+    }
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right {
+    left: -25%;
+    }
+
+    #content{
+        font-family: 'Bree Serif', serif;
+        font-size: 14px;
+    }
+
+    h2 {
+        text-align: center;
+        font-family: 'Permanent Marker', sans-serif;
+        font-size: 14px;   
+    }
+}

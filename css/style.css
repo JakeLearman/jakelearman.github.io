@@ -58,42 +58,6 @@ a {
 }
 
 
-/* mouse over link */
-
-a:hover {
-    text-decoration: bold, underline;
-}
-
-
-/* selected link */
-
-a:active {
-    text-decoration: bold;
-    color: #FFF;
-}
-
-@-webkit-keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-    to {
-        bottom: 30px;
-        opacity: 1;
-    }
-}
-
-@keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-    to {
-        bottom: 30px;
-        opacity: 1;
-    }
-}
-
 .container {
     width: 400px;
     margin: 0 auto;
@@ -117,57 +81,4 @@ a:active {
     padding-top: 22px;
     opacity: 0;
     transition: all 0.5s;
-}
-
-.first {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-}
-
-.last {
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-}
-
-.label {
-    position: relative;
-    top: -40px;
-    color: white;
-    font-weight: bold;
-    pointer-events: none;
-    transition: all 0.5s;
-}
-
-.contact:hover .icon {
-    border-radius: 50%;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.contact:hover .icon span {
-    opacity: 1;
-}
-
-.contact:hover .label {
-    opacity: 0;
-}
-
-.contact:hover .facebook {
-    background: #3b5998;
-}
-
-.contact:hover .twitter {
-    background: #55acee;
-}
-
-.contact:hover .linkedIn {
-    background: #007BB5;
-}
-
-.contact:hover .github {
-    background: #333;
-}
-
-.fa{
-    color: #FFF;
 }
