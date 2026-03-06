@@ -1,48 +1,73 @@
-input {
-   width: 100%;
-   padding: 12px 20px;
-   margin: 8px 0;
-   box-sizing: border-box;
- }
+/* --- CONTACT PAGE SPECIFIC LAYOUT --- */
 
- input:focus {
-   border: 3px solid #555;
- }
-
- textarea {
-   width: 100%;
-   height: 150px;
-   padding: 12px 20px;
-   box-sizing: border-box;
-   border: 2px solid #ccc;
-   border-radius: 4px;
-   background-color: #f8f8f8;
-   resize: none;
- }
-
- select {
-   width: 100%;
-   padding: 16px 20px;
-   border: 2px solid #ccc;
-   border-radius: 4px;
-   background-color: #f1f1f1;
- }
-
- select:focus {
-  border: 3px solid #555;
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 50px;
+    align-items: start;
 }
 
-textarea:focus{
-  border: 3px solid #555;
+.form-container {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border: 2px solid var(--ink);
+    border-radius: 15px 225px 15px 255px/225px 15px 255px 15px;
 }
 
- input[type=button], input[type=submit], input[type=reset] {
-   background-color: #555;
-   border: none;
-   color: white;
-   padding: 16px 32px;
-   text-decoration: none;
-   margin: 4px 2px;
-   cursor: pointer;
- }
- 
+.form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-family: 'Permanent Marker', cursive;
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.form-group input, 
+.form-group textarea {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 12px 15px;
+    color: var(--ink);
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    border-radius: 5px 15px 5px 10px / 10px 5px 15px 5px;
+}
+
+/* READABILITY IMPROVEMENTS FOR BUTTONS */
+.wobble-btn {
+    font-size: 1.1rem !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.wobble-btn:hover {
+    background: var(--accent) !important;
+    color: #000 !important; /* Forces black text on blue for maximum readability */
+    border-color: var(--accent) !important;
+}
+
+.submit-btn {
+    width: 100%;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+}
+
+.contact-details p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 800px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-details { order: -1; }
+}

@@ -1,46 +1,71 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Jake Learman">
-        <meta name="description" content="Jake Learman Website">
-        <title> Contact </title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/contact.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Pacifico|Permanent+Marker|Bree+Serif" rel="stylesheet">
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-    </head>
-    <body>
-        <header id="header">
-            <h1> Jake // Contact </h1>
-        </header>
-        <br>
-         <div id="content">
-            <form id="contact" action="https://formspree.io/f/jaken_learman@hotmail.com" method="POST">
-               First name:<br>
-               <input type="text" name="firstname" required>
-               <br>
-               Last name:<br>
-               <input type="text" name="lastname" required> 
-               <br>
-               Email:<br>
-               <input type="email" name="email" required>  
-               <br>
-               Message Reason:<br>
-               <select name="type" required>
-                  <option value="general"> General Query </option>
-                  <option value="work"> Business Query </option>
-               </select>
-               <br>
-               Message:<br>
-               <textarea name="message" rows="10" cols="30" required> </textarea>
-               <br>
-               <input type="submit" value="Submit">
-             </form>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Jake Learman</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/contact.css">
+    
+    <link rel="icon" href="https://fav.farm/📩" />
+</head>
+<body>
 
-             <a href="index.html" >
-                <button class="button"> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Return Home </button>
-            </a>
-         </div>
+    <div class="container">
+        <header>
+            <a href="index.html" style="text-decoration: none;"><h1 class="logo">Jake Learman</h1></a>
+            <p class="subtitle">Producer | Creative Content & Technical Delivery</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Projects</a></li>
+                    <li><a href="index.html#bio">Bio</a></li>
+                    <li><a href="contact.html" style="color: var(--accent);">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="contact-grid">
+                <section class="form-container">
+                    <form id="contact" action="https://formspree.io/f/jaken_learman@hotmail.com" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="_replyto" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Project details or inquiry..." required></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="New Portfolio Inquiry">
+                        
+                        <button type="submit" class="wobble-btn submit-btn">
+                            Send Message
+                        </button>
+                    </form>
+                </section>
+
+                <section class="contact-details">
+                    <h2 class="section-title">Direct Inquiries</h2>
+                    <p>London-based Producer specializing in XR, VFX, and AI-enabled content systems. Reach out via the form or through professional channels for technical delivery oversight or creative partnerships.</p>
+                    
+                    <div class="action-bar" style="flex-direction: column; align-items: flex-start;">
+                        <a href="https://linkedin.com/in/jakelearman" target="_blank" class="wobble-btn">LinkedIn Profile</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Jake Learman — London, UK.</p>
+        </footer>
+    </div>
+
+</body>
 </html>
