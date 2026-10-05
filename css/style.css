@@ -43,6 +43,9 @@ body {
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
+    /* full-bleed sections are sized 100vw, which includes the scrollbar's width
+       on Windows and would otherwise add a few pixels of sideways scroll */
+    overflow-x: clip;
 }
 
 ::selection { background: var(--ink); color: var(--bg); }
@@ -243,9 +246,11 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
     padding-bottom: 2px;
 }
 
-.site-nav a:hover { border-bottom-color: var(--ink); }
+.site-nav a:hover,
+.site-nav a.active { border-bottom-color: var(--ink); }
 
 .story-page { padding-top: 88px; }
+.sub-page { padding-top: 120px; }
 
 /* full-screen intro curtain: covers everything (including the nav) on load,
    and opens gradually in proportion to how far the user scrolls */
@@ -351,6 +356,11 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
     max-height: 420px;
     object-fit: cover;
 }
+
+/* personal photo fades in once downloaded; the grey box holds its place meanwhile */
+#personal-step .split-media { background: var(--line); }
+#personal-photo { opacity: 0; transition: opacity 0.5s ease-out; }
+#personal-photo.is-loaded { opacity: 1; }
 
 .split-text .section-title { margin-bottom: var(--sp-2); }
 .split-text p { color: var(--muted); max-width: 48ch; margin-bottom: var(--sp-3); }
@@ -511,6 +521,7 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
     .site-nav { flex-direction: column; align-items: flex-start; gap: var(--sp-1); }
     .site-nav ul { flex-wrap: wrap; gap: var(--sp-2); }
     .story-page { padding-top: 130px; }
+    .sub-page { padding-top: 150px; }
     .split-panel, .split-panel.reverse { flex-direction: column; }
     .split-media, .split-text { width: 100%; }
     .split-text { padding: var(--sp-4) var(--sp-3) 0; }

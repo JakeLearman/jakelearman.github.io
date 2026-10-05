@@ -12,8 +12,20 @@
             '000095410020.jpg', '000095410035.jpg', '000095420010.jpg',
             '000095420013.jpg'
         ];
-        const pick = photos[Math.floor(Math.random() * photos.length)];
-        photoTarget.src = `images/Photos/${pick}`;
+        // Resized copies (~300KB) rather than the 4-6MB originals, so the panel
+        // doesn't sit empty while a huge file downloads. If one fails to load,
+        // try another instead of leaving a blank box.
+        const tried = new Set();
+        const loadRandomPhoto = () => {
+            const remaining = photos.filter((name) => !tried.has(name));
+            if (!remaining.length) return;
+            const pick = remaining[Math.floor(Math.random() * remaining.length)];
+            tried.add(pick);
+            photoTarget.src = `images/Photos/web/${pick}`;
+        };
+        photoTarget.addEventListener('load', () => photoTarget.classList.add('is-loaded'));
+        photoTarget.addEventListener('error', loadRandomPhoto);
+        loadRandomPhoto();
     }
 
     // ?motion=force lets you preview the animation even if your OS/browser
