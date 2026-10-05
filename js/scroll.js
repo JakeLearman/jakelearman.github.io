@@ -38,6 +38,7 @@
             curtain.style.display = 'none';
         } else {
             const bars = curtain.querySelectorAll('.blinds span');
+            const title = curtain.querySelector('.intro-title');
             let ticking = false;
 
             const update = () => {
@@ -45,6 +46,12 @@
 
                 const openDistance = introSpacer.offsetHeight;
                 const progress = Math.max(0, Math.min(1, window.scrollY / openDistance));
+
+                // name/role sit on the curtain and fade out as the shutters lift
+                if (title) {
+                    title.style.opacity = String(Math.max(0, 1 - progress * 2.2));
+                    title.style.transform = `translateY(${-progress * 40}px)`;
+                }
 
                 bars.forEach((bar, i) => {
                     const staggerStart = (i / bars.length) * 0.6;
