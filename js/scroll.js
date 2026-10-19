@@ -39,16 +39,14 @@
     // user scrolls through the reserved .intro-spacer distance. Fully
     // bidirectional: scrolling back up to the top closes it again, so its
     // colours/state always match the current scroll position rather than
-    // vanishing permanently the first time it opens.
+    // vanishing permanently the first time it opens. The state is derived
+    // from scrollY alone, so it's already correct when the browser restores
+    // a previous position or jumps to #about/#contact on load.
+    // With reduced motion, CSS turns the curtain into a static title card.
     const curtain = document.getElementById('intro-curtain');
     const introSpacer = document.querySelector('.intro-spacer');
     if (curtain && introSpacer) {
-        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-        window.scrollTo(0, 0);
-
-        if (reduceMotion) {
-            curtain.style.display = 'none';
-        } else {
+        if (!reduceMotion) {
             const bars = curtain.querySelectorAll('.blinds span');
             const title = curtain.querySelector('.intro-title');
             let ticking = false;
