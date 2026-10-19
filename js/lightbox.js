@@ -9,7 +9,11 @@
     // Step through in roll order (the filenames) instead, which reads left to
     // right across the grid.
     const photos = links
-        .map((link) => ({ link, src: link.getAttribute('href'), alt: link.querySelector('img')?.alt || '' }))
+        .map((link) => {
+            const alt = link.querySelector('img')?.alt || '';
+            // the visible caption (place and year) where one is set, otherwise the description
+            return { link, src: link.getAttribute('href'), alt, caption: link.dataset.caption || alt };
+        })
         .sort((a, b) => a.src.localeCompare(b.src));
 
     const box = document.createElement('dialog');
@@ -39,7 +43,7 @@
         img.classList.remove('is-loaded');
         img.src = photo.src;
         img.alt = photo.alt;
-        alt.textContent = photo.alt;
+        alt.textContent = photo.caption;
         count.textContent = `${index + 1} / ${photos.length}`;
         // warm the cache for the neighbours so stepping feels instant
         [index + 1, index - 1].forEach((n) => {
