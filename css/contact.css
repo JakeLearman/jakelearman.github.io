@@ -47,8 +47,15 @@
     width: fit-content;
     cursor: pointer;
     background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    border-radius: 0;
+    padding: 0 0 2px;
+    font-family: var(--font);
     margin-top: var(--sp-1);
 }
+
+.submit-btn:disabled { cursor: wait; opacity: 0.5; }
 
 /* honeypot: hidden from people, but bots fill it in and Formspree discards those */
 .hp-field {

@@ -59,6 +59,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     html { scroll-behavior: auto; }
 }
 
+/* keep in-page jump targets clear of the fixed nav bar */
+section[id] { scroll-margin-top: 80px; }
+
+@media (max-width: 640px) {
+    section[id] { scroll-margin-top: 120px; }
+}
+
 .container {
     max-width: 860px;
     width: 92%;
@@ -335,18 +342,39 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
 .split-media { width: 50%; flex: none; min-width: 0; }
 .split-text { width: 50%; flex: none; min-width: 0; padding: 0 var(--sp-8); box-sizing: border-box; }
 
-.media-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+/* typographic stand-in for a project still: a short reel of headline credits */
+.credit-reel {
+    list-style: none;
+    margin: 0;
+    padding: var(--sp-5) var(--sp-8);
     height: 50vh;
     max-height: 420px;
-    background: var(--line);
-    color: var(--muted);
-    font-size: var(--fs-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg-alt);
+}
+
+.credit-reel li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--sp-2);
+    padding: var(--sp-1) 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.credit-reel li:last-child { border-bottom: none; }
+
+.credit-reel span { font-size: var(--fs-md); font-weight: 600; letter-spacing: -0.01em; }
+
+.credit-reel em {
+    flex: none;
+    font-style: normal;
+    font-size: var(--fs-xs);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
+    color: var(--muted);
 }
 
 .split-media img {
@@ -398,7 +426,6 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
     background-size: 100% 24px;
     background-repeat: round;
 }
-.about-panel .media-placeholder { height: auto; min-height: 300px; }
 .about-panel .split-media img {
     width: 100%;
     height: auto;
@@ -525,7 +552,9 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
     .split-panel, .split-panel.reverse { flex-direction: column; }
     .split-media, .split-text { width: 100%; }
     .split-text { padding: var(--sp-4) var(--sp-3) 0; }
-    .media-placeholder, .split-media img { height: 40vh; }
+    .split-media img { height: 40vh; }
+    .credit-reel { height: auto; max-height: none; padding: var(--sp-4) var(--sp-3); }
+    .credit-reel span { font-size: var(--fs-base); }
 }
 
 @media (min-width: 641px) and (max-width: 960px) {
