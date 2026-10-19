@@ -9,7 +9,7 @@
 
     --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-    --fs-xs: 0.72rem;
+    --fs-xs: 0.75rem;
     --fs-sm: 0.9rem;
     --fs-base: 1.05rem;
     --fs-md: 1.2rem;
@@ -55,8 +55,31 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     outline-offset: 3px;
 }
 
+/* first Tab stop: jump past the nav and intro straight to the content */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: var(--sp-2);
+    z-index: 50;
+    padding: var(--sp-1) var(--sp-2);
+    background: var(--ink);
+    color: var(--bg);
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.skip-link:focus { top: var(--sp-2); }
+
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
+}
+
+/* keep in-page jump targets clear of the fixed nav bar */
+section[id] { scroll-margin-top: 80px; }
+
+@media (max-width: 640px) {
+    section[id] { scroll-margin-top: 120px; }
 }
 
 .container {
@@ -166,6 +189,37 @@ nav a:hover, nav a.active { border-bottom-color: var(--ink); }
 
 .project-row p { margin: 0 0 var(--sp-3); max-width: 56ch; color: var(--muted); font-size: var(--fs-base); }
 
+.project-row .project-role {
+    margin: 0 0 var(--sp-2);
+    color: var(--ink);
+    font-size: var(--fs-sm);
+    font-weight: 500;
+}
+
+/* rows with a project still get a third column for the image */
+.project-row:has(.project-thumb) { grid-template-columns: 52px 1fr 220px; }
+
+.project-thumb {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--line);
+    margin-top: 3px;
+}
+
+.page-intro { color: var(--muted); max-width: 56ch; margin: 0 0 var(--sp-6); }
+
+.work-group { margin-bottom: var(--sp-8); }
+
+.group-title {
+    font-size: var(--fs-lg);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--sp-3);
+}
+
 .project-link {
     display: inline-block;
     color: var(--ink);
@@ -210,7 +264,7 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
     top: 0;
     left: 0;
     right: 0;
-    z-index: 20;
+    z-index: 40;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -252,8 +306,8 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
 .story-page { padding-top: 88px; }
 .sub-page { padding-top: 120px; }
 
-/* full-screen intro curtain: covers everything (including the nav) on load,
-   and opens gradually in proportion to how far the user scrolls */
+/* full-screen intro curtain: covers the page (but not the nav, so the links
+   are usable straight away) and opens in proportion to how far the user scrolls */
 .intro-curtain {
     position: fixed;
     inset: 0;
@@ -262,7 +316,9 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
     pointer-events: none;
 }
 
-.intro-curtain .blinds span { transition: none; background: var(--bg); }
+/* the shadow fills the 4px gap below each bar, so the page underneath doesn't
+   show through the closed curtain; it scales away with its bar */
+.intro-curtain .blinds span { transition: none; background: var(--bg); box-shadow: 0 4px 0 #050505; }
 .intro-curtain .blinds span:nth-child(even) { background: var(--bg-alt); }
 
 /* Same six equal rows and 4px gap as the .blinds bars beneath, so each line of
@@ -293,25 +349,29 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
     color: var(--muted);
 }
 
-.intro-spacer { height: 70vh; }
+.intro-spacer { height: 45vh; }
 
+/* without motion, the curtain becomes a static title card and the page
+   scrolls normally beneath it */
 @media (prefers-reduced-motion: reduce) {
-    html:not(.force-motion) .intro-curtain { display: none; }
+    html:not(.force-motion) .intro-curtain { position: relative; height: 70vh; }
+    html:not(.force-motion) .intro-spacer { display: none; }
+    html:not(.force-motion) .story-page { padding-top: var(--sp-6); }
 }
 
 .shutter-divider {
     position: relative;
     overflow: hidden;
-    height: 22vh;
-    min-height: 180px;
-    max-height: 320px;
+    height: 14vh;
+    min-height: 110px;
+    max-height: 200px;
     width: 100vw;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    margin-top: var(--sp-8);
-    margin-bottom: var(--sp-8);
+    margin-top: var(--sp-6);
+    margin-bottom: var(--sp-6);
 }
 
 .shutter-divider .blinds span { transition: none; background: var(--bg); }
@@ -334,20 +394,6 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
 
 .split-media { width: 50%; flex: none; min-width: 0; }
 .split-text { width: 50%; flex: none; min-width: 0; padding: 0 var(--sp-8); box-sizing: border-box; }
-
-.media-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 50vh;
-    max-height: 420px;
-    background: var(--line);
-    color: var(--muted);
-    font-size: var(--fs-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
 
 .split-media img {
     display: block;
@@ -398,7 +444,6 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
     background-size: 100% 24px;
     background-repeat: round;
 }
-.about-panel .media-placeholder { height: auto; min-height: 300px; }
 .about-panel .split-media img {
     width: 100%;
     height: auto;
@@ -427,6 +472,42 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
 
 .credits-list p { margin: 0 0 var(--sp-1); color: var(--muted); font-size: var(--fs-sm); }
 
+/* featured projects: wider than the text column so three images sit side by side */
+.featured-work {
+    width: min(1200px, 100vw - 48px);
+    position: relative;
+    left: 50%;
+    margin-left: calc(min(1200px, 100vw - 48px) / -2);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-4);
+}
+
+.featured-card figure { margin: 0 0 var(--sp-2); }
+
+.featured-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--line);
+}
+
+.featured-card h3 {
+    font-size: var(--fs-md);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 var(--sp-1);
+}
+
+.featured-card p { color: var(--muted); font-size: var(--fs-sm); margin: 0 0 var(--sp-2); }
+
+.featured-more { margin-top: var(--sp-5); }
+
 /* 9. PHOTO GALLERY (parallax columns) */
 .parallax-columns {
     display: flex;
@@ -449,6 +530,99 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
     display: block;
     width: 100%;
     height: auto;
+}
+
+/* full-screen photo viewer (js/lightbox.js) */
+html.lightbox-open { overflow: hidden; }
+
+.lightbox {
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--ink);
+    overflow: hidden;
+}
+
+.lightbox::backdrop {
+    background-color: rgba(8, 8, 8, 0.96);
+    background-image: var(--noise);
+    background-blend-mode: overlay;
+}
+
+.lightbox[open] { animation: lightbox-in 0.3s ease-out; }
+
+@keyframes lightbox-in { from { opacity: 0; } }
+
+.lightbox-figure {
+    height: 100%;
+    margin: 0;
+    padding: var(--sp-8) var(--sp-10) var(--sp-3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-2);
+}
+
+.lightbox-img {
+    display: block;
+    min-height: 0;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.35s ease-out;
+}
+
+.lightbox-img.is-loaded { opacity: 1; }
+
+.lightbox-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    width: 100%;
+    max-width: 100%;
+    font-size: var(--fs-sm);
+    color: var(--muted);
+}
+
+.lightbox-count { flex: none; font-variant-numeric: tabular-nums; letter-spacing: 0.08em; }
+
+.lightbox-btn {
+    position: absolute;
+    background: none;
+    border: none;
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: var(--fs-lg);
+    line-height: 1;
+    padding: var(--sp-2);
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.lightbox-btn:hover, .lightbox-btn:focus-visible { opacity: 1; }
+.lightbox-close { top: var(--sp-2); right: var(--sp-2); font-size: 2rem; }
+.lightbox-prev, .lightbox-next { top: 50%; transform: translateY(-50%); }
+.lightbox-prev { left: var(--sp-2); }
+.lightbox-next { right: var(--sp-2); }
+
+.gallery a { display: block; cursor: zoom-in; }
+
+@media (max-width: 640px) {
+    /* on phones the arrows sit along the bottom, clear of the photo */
+    .lightbox-figure { padding: var(--sp-8) var(--sp-2) var(--sp-10); }
+    .lightbox-prev, .lightbox-next { top: auto; bottom: var(--sp-2); transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:not(.force-motion) .lightbox[open] { animation: none; }
+    html:not(.force-motion) .lightbox-img { transition: none; }
 }
 
 /* 10. SCROLL REVEAL */
@@ -509,12 +683,16 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
     html:not(.force-motion) .parallax-col { transform: none !important; }
     html:not(.force-motion) .section-bar { transform: scaleX(1); transition: none; }
     html:not(.force-motion) .blinds span { transform: scaleY(0); transition: none; }
+    /* the static title card keeps its closed stripes */
+    html:not(.force-motion) .intro-curtain .blinds span { transform: none; }
 }
 
 /* 11. MOBILE */
 @media (max-width: 640px) {
     header { flex-direction: column; align-items: flex-start; }
-    .project-row { grid-template-columns: 36px 1fr; gap: var(--sp-2); }
+    .project-row, .project-row:has(.project-thumb) { grid-template-columns: 36px 1fr; gap: var(--sp-2); }
+    .project-thumb { grid-column: 2; grid-row: 1; margin: 0 0 var(--sp-1); }
+    .project-row > div:not(.index) { grid-column: 2; }
     nav ul { flex-wrap: wrap; gap: var(--sp-2); }
     .action-bar { flex-direction: column; gap: var(--sp-2); }
     .parallax-columns { flex-direction: column; }
@@ -525,7 +703,10 @@ footer { margin-top: var(--sp-10); text-align: center; color: var(--muted); padd
     .split-panel, .split-panel.reverse { flex-direction: column; }
     .split-media, .split-text { width: 100%; }
     .split-text { padding: var(--sp-4) var(--sp-3) 0; }
-    .media-placeholder, .split-media img { height: 40vh; }
+    .split-media img { height: 40vh; }
+    .featured-grid { grid-template-columns: 1fr; gap: var(--sp-6); }
+    .shutter-divider { height: 90px; min-height: 0; margin-top: var(--sp-5); margin-bottom: var(--sp-5); }
+    .intro-spacer { height: 35vh; }
 }
 
 @media (min-width: 641px) and (max-width: 960px) {
